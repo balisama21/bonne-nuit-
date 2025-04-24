@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lettre du soir pour Aina 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientBG 30s ease infinite;
+      font-family: 'Quicksand', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/star.png') repeat top center;
+      animation: stars 50s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes stars {
+      0% { background-position: 0 0; }
+      100% { background-position: -10000px 5000px; }
+    }
+
+    .envelope-container {
+      width: 300px;
+      height: 220px;
+      background: url('https://cdn.pixabay.com/photo/2021/01/19/11/47/letter-5929924_1280.png') no-repeat center/contain;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .letter {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      animation: fadeIn 2s ease forwards;
+      position: relative;
+      z-index: 3;
+    }
+
+    h1 {
+      font-family: 'Parisienne', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ffcdd2;
+    }
+
+    .message {
+      font-size: 1.2rem;
+      white-space: pre-wrap;
+      line-height: 1.8;
+      font-family: 'Parisienne', cursive;
+      color: #ffe6e6;
+      position: relative;
+    }
+
+    .signature {
+      font-size: 1.5rem;
+      font-family: 'Parisienne', cursive;
+      margin-top: 20px;
+      color: #ffb6c1;
+      animation: heartbeat 2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <div class="envelope-container" id="envelope"></div>
+
+  <div class="letter" id="letter">
+    <h1>Lettre pour Aina 🌙</h1>
+    <div class="message">
+Bonsoir Aina,
+
+Avant que la nuit ne tombe tout à fait, je voulais t’écrire une dernière fois pour aujourd’hui…
+
+Tu sais, parfois on ne trouve pas les bons mots, ou on ne sait pas comment exprimer ce qu’on ressent vraiment.
+
+Ce n’est pas un manque d’envie, ni d’intérêt… c’est juste que les émotions sont plus fortes que les phrases.
+
+J’ai senti que tu étais peut-être un peu triste, ou que tu t’es posé des questions. Et si c’est à cause de moi, je suis vraiment désolé.
+
+J’espère que tu trouveras ce soir un peu de paix dans ton cœur, que la lune t’apaisera, et que tes rêves seront beaux, doux et clairs.
+
+Tu mérites d’être entourée de lumière, de douceur et de sincérité.
+
+Alors, bonne nuit Aina. Dors bien. Et si demain tu veux encore qu’on se parle, je serai là.
+    </div>
+    <div class="signature">— Balsama 💖</div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_72e52e2522.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio.
+  </audio>
+
+  <script>
+    const envelope = document.getElementById('envelope');
+    const letter = document.getElementById('letter');
+
+    envelope.addEventListener('click', () => {
+      envelope.style.display = 'none';
+      letter.style.display = 'flex';
+    });
+  </script>
+</body>
+</html>
